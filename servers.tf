@@ -15,7 +15,7 @@ resource "null_resouce" "provisioner" {
       type     = "ssh"
       user     = "centos"
       password = "DevOps321"
-      host     = aws_instance.web.private_ip
+      host     = aws_instance.web[frontend].private_ip
     }
 
     inline = [
