@@ -8,7 +8,7 @@ resource "aws_instance" "frontend" {
 
 }
 
-resource "null_resouce" "provisioner" {
+resource "null_resource" "provisioner" {
 
   provisioner "remote-exec" {
     connection {
