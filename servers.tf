@@ -7,7 +7,10 @@ resource "aws_instance" "web" {
   }
 
   connection {
-    host = self.private_ip
+    type     = "ssh"
+    user     = "centos"
+    password = "DevOps321"
+    host     = self.private_ip
   }
 
   provisioner "remote-exec" {
