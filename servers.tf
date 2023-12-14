@@ -6,12 +6,16 @@ resource "aws_instance" "web" {
     Name = "frontend"
   }
 
+}
+
+resource "null" terraform {
+
   provisioner "remote-exec" {
     connection {
       type     = "ssh"
       user     = "centos"
       password = "DevOps321"
-      host     = self.private_ip
+      host     = aws_instance.web.private_ip
     }
 
     inline = [
