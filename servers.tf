@@ -31,3 +31,11 @@ resource "null_resource" "provisioner" {
     ]
   }
 }
+
+resource "aws_route53_record" "frontend" {
+  zone_id = "Z068357614KDH6BL7CVGP"
+  name    = "frontend-dev.akrdevopsb72.online"
+  type    = "A"
+  ttl     = 30
+  records = [aws_instance.frontend.private_ip]
+}
