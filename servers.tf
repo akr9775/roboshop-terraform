@@ -1,4 +1,4 @@
-resource "aws_instance" "web" {
+resource "aws_instance" "frontend" {
   ami           = data.aws_ami.ami.id
   instance_type = "t2.micro"
 
@@ -15,7 +15,7 @@ resource "null_resouce" "provisioner" {
       type     = "ssh"
       user     = "centos"
       password = "DevOps321"
-      host     = aws_instance.web[frontend].private_ip
+      host     = aws_instance.frontend.private_ip
     }
 
     inline = [
