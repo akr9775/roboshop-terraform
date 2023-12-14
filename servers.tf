@@ -1,17 +1,11 @@
-resource "aws_security_group" "allow-all" {
-  name        = "allow-all"
-  description = "allow-all"
-  vpc_id      = "vpc-0996562c5f23266e5"
-
-  tags = {
-    Name = "allow-all"
-  }
+data "aws_security_group" "allow-all" {
+  name = "allow-all"
 }
 
 resource "aws_instance" "frontend" {
   ami           = data.aws_ami.ami.id
   instance_type = "t2.micro"
-  vpc_security_group_ids = [aws_security_group.allow-all.id]
+  vpc_security_group_ids = [data.aws_security_group.allow-all.id]
 
   tags = {
     Name = "frontend"
