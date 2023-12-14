@@ -15,7 +15,7 @@ resource "aws_instance" "web" {
     }
 
     inline = [
-      "rm -rf roboshop-shell"
+      "rm -rf roboshop-shell",
       "git clone https://github.com/akr9775/roboshop-shell.git",
       "cd roboshop-shell",
       "sudo bash frontend.sh"
