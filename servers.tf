@@ -1,6 +1,7 @@
 resource "aws_security_group" "allow-all" {
   name        = "allow-all"
   description = "allow-all"
+  vpc_id      = "vpc-0996562c5f23266e5"
 
   tags = {
     Name = "allow-all"
