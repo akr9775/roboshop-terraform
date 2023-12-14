@@ -8,7 +8,7 @@ resource "aws_instance" "web" {
 
 }
 
-resource "null" terraform {
+resource "null_resouce" "provisioner" {
 
   provisioner "remote-exec" {
     connection {
